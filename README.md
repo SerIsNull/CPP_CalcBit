@@ -4,13 +4,14 @@ This is a simply bitwise calculator.
 ==========================================
 Descriptions of using and installation:  +
 ==========================================
-1. Run make utility. You'll get binary-file;
-2. Run binary-file such as CalcBitwise;
-3. If you need to install this calculator then;
+1. Run make utility. You'll get a binary-file;
+2. Run binary-file such as a CalcBitwise;
+3. If you need to install this calculator then
 you need to run this command such as "make install" after item one;
-4. If you need to uninstall it then yoy need
-you need to run the command such as "make uninstall" after item three;
-5. At the end you can delete all the resulting files after item one.
+4. If you need to uninstall it then you need
+to run the command such as "make uninstall" after item three;
+5. At the end you can delete all the resulting files "make clean".
+You need to do it after item one.
 
 =========================================
 Description of the programm		+
@@ -30,23 +31,23 @@ The parser declare in the Parser.cpp and
 define in the Parser.hpp.
 
 The rules:
-1) Priority 5. Handle binary bitwise operator OR;
+1) Priority 5. Handle binary bitwise operator like OR 
 -Expression:
 secondTerm
 Expression OR secondTerm
 
-2) Priority 4. Handle binary bitwise operator XOR;
+2) Priority 4. Handle binary bitwise operator like XOR 
 -secondTerm:
 firstTerm
 secondTerm XOR firstTerm
 
-3) Priority 3. Handle binary bitwise operator AND;
+3) Priority 3. Handle binary bitwise operator like AND 
 -firstTerm:
 Primary
 firstTerm AND Primary
 
-4) Prioriry 2. Handle unary bitwise complement operator ~;
-Priority 1. Handle unary logical operator NOT;
+4) Prioriry 2. Handle unary bitwise complement operator like ~
+Priority 1. Handle unary logical operator like NOT
 Priority 0. Handle '(' Expression ')'
 -Primary:
 '(' Expression ')'
