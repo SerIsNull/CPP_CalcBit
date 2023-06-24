@@ -15,44 +15,44 @@ you need to run the command such as "make uninstall" after item three;
 =========================================
 Description of the programm		+
 =========================================
-1. We get token from input-stream
+1. We get token from the input-stream
 The type Token declare in the Token.cpp and
 define in the Token.hpp;
 
-2. We put this token in token-stream.
+2. We put this token in the token-stream.
 The algorithm works with it.
 The type TokenStream declare in the TokenStream.cpp and
 define in the Token.hpp;
 
-3. Each token is parsed accordint to rules.
+3. Each token is parsed accordint to the rules.
 These rulse is descripted in Parser. You can look at bellow.
 The parser declare in the Parser.cpp and
 define in the Parser.hpp.
 
 The rules:
-1) Priority 5. Handle binary bitwise operator OR
-	Expression:
-		secondTerm
-		Expression OR secondTerm
+1) Priority 5. Handle binary bitwise operator OR;
+-Expression:
+secondTerm
+Expression OR secondTerm
 
-2) Priority 4. Handle binary bitwise operator XOR
-	secondTerm:
-		firstTerm
-		secondTerm XOR firstTerm
+2) Priority 4. Handle binary bitwise operator XOR;
+-secondTerm:
+firstTerm
+secondTerm XOR firstTerm
 
-3) Priority 3. Handle binary bitwise operator AND
-	firstTerm:
-		Primary
-		firstTerm AND Primary
+3) Priority 3. Handle binary bitwise operator AND;
+-firstTerm:
+Primary
+firstTerm AND Primary
 
+4) Prioriry 2. Handle unary bitwise complement operator ~;
+Priority 1. Handle unary logical operator NOT;
+Priority 0. Handle '(' Expression ')'
+-Primary:
+'(' Expression ')'
+! Expression
+~ Expression
 
-4) Prioriry 2. Handle unary bitwise complement operator ~
-   Priority 1. Handle unary logical operator NOT
-   Priority 0. Handle '(' Expression ')'
-	Primary:
-		'(' Expression ')'
-		  ! Expression
-		  ~ Expression
-		  Number
-	Number:
-		integer
+5) Return value as an integer;
+-Number:
+integer
